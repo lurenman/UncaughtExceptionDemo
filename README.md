@@ -1,6 +1,6 @@
 # UncaughtExceptionDemo
 这个是android端未捕获异常的处理
-#Application 
+ 
  public class mApplication extends Application {
     private List<Activity> activityList = new LinkedList<Activity>();
     private static mApplication instance;
