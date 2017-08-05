@@ -1,8 +1,7 @@
 # UncaughtExceptionDemo
 这个是android端未捕获异常的处理
 #Application 
-
-public class mApplication extends Application {
+ public class mApplication extends Application {
     private List<Activity> activityList = new LinkedList<Activity>();
     private static mApplication instance;
     private int i=1;
@@ -17,9 +16,10 @@ public class mApplication extends Application {
         //CrashHelper.getInstance().init(this);
 
     }
- 如果CrashHelper.getInstance().init(this)注册在Application里，华为手机6.0会重启两次，如果注册在主activity则不会重启
+ 如果CrashHelper.getInstance().init(this)注册在Application里，华为手机6.0经测试会重启两次（这样会多存文件两次），如果注册在主activity则不会发生重启
     
-CrashHelper这个是核心处理异常的类
+# 主要CrashHelper类
+ 
  public class CrashHelper implements Thread.UncaughtExceptionHandler {
     public static final String TAG = "CrashHelper";
 
